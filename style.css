@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hallowed Grounds";
+}
+body {
+  background-color: black;
+}
+svg path {
+  fill: white;
+  stroke-width: 2px;
+  stroke: white;
+  stroke-dasharray: 727;
+  stroke-dashoffset: 727;
+  animation: textAnimation 4s ease-in-out 1 forwards;
+}
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+.banner .content .title {
+  font-size: 6em;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("04.jpg");
+  background-size: cover;
+  z-index: -1;
+  background-position: center;
+  mask-image: url(video.gif);
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 727;
+  }
+
+  100% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+}
